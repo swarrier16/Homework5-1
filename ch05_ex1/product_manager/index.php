@@ -47,9 +47,13 @@ if ($action == 'list_products') {
             $name == NULL || $price == NULL || $price == FALSE) {
         $error = "Invalid product data. Check all fields and try again.";
         include('../errors/error.php');
-    } else { 
+     } else { 
         add_product($category_id, $code, $name, $price);
         header("Location: .?category_id=$category_id");
     }
-}    
+       
+}   
+   else if ($action == "list_categories"){
+     include ('category_list.php');
+   }
 ?>
